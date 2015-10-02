@@ -5,14 +5,37 @@ function setup() {
 	noLoop();
 }
 
+
 function draw() {
 	// clear the background
-	background(50, 50, 150);
 
-	// set a fill color
-	fill(255, 255, 255);
+	background(100, 190, 250);
 
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+	// draw ground
+	var colorGround = color(40, 180, 50);
+	fill(colorGround);
+	rect(0, 200, 640, 160);
+
+	for (var i = 1; i < 100; i++) {
+		var xRandom = random(10);
+		var yRandom = random(10);
+		drawDandelion(xRandom, yRandom);
+	}
+
+	// draw the weeds...I mean dandelions
+	function drawDandelion(x, y) {
+		// draw stems
+		fill(0, 120, 10);
+		rect(x * 60 - 1, y * 50 + 100, 4, 100, 20);
+		fill(169, 225, 173);
+		ellipse(x * 60, y * 50 + 100, 10, 10);
+
+		// draw puffy white balls
+		for (var i = 1; i < 8; i++) {
+			noStroke();
+			fill(255, 255, 255, 80);
+			ellipse(x * 60, y * 50 + 100, i * -10 + 50, i * -10 + 50);
+
+		}
+	}
 }
