@@ -23,12 +23,6 @@ function draw() {
 		line(mouseX + 20, mouseY + 20, mouseX - 20, mouseY - 20);
 	}
 
-	function X(left, up, right, down) {
-		stroke(255, 0, 0);
-		strokeWeight(15);
-		line(right, up, left, down);
-		line(right, down, left, up);
-	}
 
 	var right = mouseX + 20;
 	var left = mouseX - 20;
@@ -36,17 +30,19 @@ function draw() {
 	var down = mouseY + 20;
 
 
-	if ((mouseX > 30) && (mouseX < 180) && (mouseY > 30) && (mouseY < 330)) {
+
+	if ((mouseX > 30) mouseX = mouseX
+
+		&& (mouseX < 180) && (mouseY > 30) && (mouseY < 330)) {
 		stroke(255, 0, 0);
 		strokeWeight(15);
-		line(right, up, left, down);
+		line(right, up, left, mouseY + 20);
 		line(right, down, left, up);
 
 	}
 
 	if (mouseX < 30) {
 		line(mouseX + 20, mouseY - 20, mouseX - 20, mouseY + 20);
-
-		left = 10
 	}
+	right = 30
 }

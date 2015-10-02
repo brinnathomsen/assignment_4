@@ -1,34 +1,30 @@
+var startX = 0
+var startY = 0
+
+
 function setup() {
 	createCanvas(640, 460);
 }
 
 
-
 function draw() {
 
-	if (mouseIsPressed) {
+	background(50, 10, 10);
+	strokeWeight(10);
+	ellipseMode(RADIUS);
 
-		background(100, 10, 10);
-		stroke(255, 255, 255);
-		strokeWeight(7);
-		line(100, 100, mouseX, mouseY);
-
-
-		fill(0, 100, 255);
-		ellipse(mouseX, mouseY, 50, 50);
-		ellipse(100, 100, 50, 50);
+	fill(0, 100, 255);
+	stroke(255, 255, 255);
 
 
-
+	if (!isMousePressed) {
+		startX = mouseX;
+		startY = mouseY;
 	} else {
-
-		background(50, 10, 10);
-		stroke(255, 255, 255);
-		strokeWeight(7);
-		fill(0, 100, 255);
-		ellipse(mouseX, mouseY, 50, 50);
+		line(startX, startY, mouseX, mouseY);
+		ellipse(startX, startY, 20, 20);
 	}
 
-
+	ellipse(mouseX, mouseY, 20, 20);
 
 }

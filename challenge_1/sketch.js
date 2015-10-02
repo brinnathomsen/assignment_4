@@ -16,15 +16,15 @@ function draw() {
 	fill(colorGround);
 	rect(0, 200, 640, 160);
 
-	for (var i = 1; i < 30; i++) {
+	for (var i = 1; i < 50; i++) {
 		var xRandom = random(10);
-		var yRandom = random(10);
-		drawDandelionBack(xRandom, yRandom);
+		var yRandom = i;
+		drawDandelion(xRandom, yRandom);
 
 	}
 
 	// draw the weeds...I mean dandelions
-	function drawDandelionBack(x, y) {
+	function drawDandelion(x, y) {
 		// draw stems
 		fill(0, 120, 10);
 		rect(x * 60 - 1, y * 20 + 100, 4, 100, 20);
