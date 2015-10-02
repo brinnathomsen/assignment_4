@@ -28,16 +28,15 @@ function setup() {
 }
 
 
-// draw: called by p5 repeatedly to draw the game
 function draw() {
 
-	//////////////////////////////
-	// update
 
-	//updateBall;
+
+	// paddle follows mouse
 	paddle.x = mouseX;
 
-	//////////////////////////////
+
+	// draw ball
 	background(50, 50, 50);
 
 	fill(255, 255, 255);
@@ -74,20 +73,15 @@ function draw() {
 		ball.speedY = -ball.speedY;
 	}
 
-	// check for a *collision* between the ball and the paddle
-	// look up the && operator
+	// making the ball bounce off the paddle
 
 	if ((ball.x > paddle.x - paddle.width) && (ball.y > paddle.y)) {
 		ball.speedY = -ball.speedY;
-
-		//test = true;
 	}
 
 	if ((ball.x > paddle.x + paddle.width) && (ball.y > paddle.y)) {
 		ball.speedY = -ball.speedY;
-
-		//test = true;
 	}
-	//	}
-	//}
+
+
 }

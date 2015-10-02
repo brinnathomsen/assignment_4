@@ -1,18 +1,31 @@
+var xPositions = [];
+var yPositions = [];
+var bubbleSize = [];
+
 function setup() {
-	// create a place to draw
-	createCanvas(640, 360);
+	createCanvas(640, 480);
+
 	noStroke();
-	noLoop();
+
+	for (var i = 0; i < 50; i++) {
+		xPositions[i] = random(0, 640);
+		yPositions[i] = random(0, 480);
+
+	}
 }
 
 function draw() {
-	// clear the background
-	background(150, 50, 50);
 
-	// set a fill color
-	fill(255, 255, 255);
+	background(150, 0, 0);
 
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+	for (var i = 0; i < 100; i++) {
+		xPositions[i] = xPositions[i] + random(-2, 2);
+		yPositions[i] = yPositions[i] + random(-2, 2);
+
+		bubbleSize = i + 4;
+
+
+		fill(100, 250, 250);
+		ellipse(xPositions[i], yPositions[i], bubbleSize, bubbleSize);
+	}
 }

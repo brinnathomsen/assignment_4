@@ -1,18 +1,34 @@
 function setup() {
-	// create a place to draw
-	createCanvas(640, 360);
-	noStroke();
-	noLoop();
+	createCanvas(640, 460);
 }
 
+
+
 function draw() {
-	// clear the background
-	background(150, 150, 50);
 
-	// set a fill color
-	fill(255, 255, 255);
+	if (mouseIsPressed) {
 
-	// draw the ellipse
-	var diameter = random(100, 200);
-	ellipse(320, 180, diameter, diameter);
+		background(100, 10, 10);
+		stroke(255, 255, 255);
+		strokeWeight(7);
+		line(100, 100, mouseX, mouseY);
+
+
+		fill(0, 100, 255);
+		ellipse(mouseX, mouseY, 50, 50);
+		ellipse(100, 100, 50, 50);
+
+
+
+	} else {
+
+		background(50, 10, 10);
+		stroke(255, 255, 255);
+		strokeWeight(7);
+		fill(0, 100, 255);
+		ellipse(mouseX, mouseY, 50, 50);
+	}
+
+
+
 }
