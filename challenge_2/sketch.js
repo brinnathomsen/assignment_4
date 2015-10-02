@@ -1,11 +1,4 @@
-// challenge_2.js
 
-// In this challenge a ball bounces around the screen.
-// The ball bounces when it hits the side of the canvas
-// and when it hits a mouse controlled paddle.
-
-// This challenge contains multiple syntax, runtime, and 
-// logical errors. Find and fix the errors to make it work.
 
 
 // ball: a data object to hold info about the ball
@@ -27,8 +20,6 @@ var paddle = {
 };
 
 
-// setup: called by p5 once at startup
-setup() {
 	createCanvas(640, 480);
 	noStroke();
 }
@@ -36,20 +27,12 @@ setup() {
 
 // draw: called by p5 repeatedly to draw the game
 function draw() {
-	
 	//////////////////////////////
 	// update
 
-	updateBall); 
-	paddle.x = mouseY;
-
 
 	//////////////////////////////
-	// draw
-
 	background(50, 50, 50);
-	circle(ball.x, ball.y, ball.radius * 2, ball.radius * 2);
-	square(paddle.x - paddle.width * 0.5, paddle.y, paddle.width, paddle.height);
 
 }
 
