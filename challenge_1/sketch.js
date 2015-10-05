@@ -5,7 +5,6 @@ function setup() {
 	noLoop();
 }
 
-
 function draw() {
 	// clear the background
 
@@ -17,8 +16,8 @@ function draw() {
 	rect(0, 200, 640, 160);
 
 	for (var i = 1; i < 50; i++) {
-		var xRandom = random(10);
-		var yRandom = i;
+		var xRandom = random(10) + .5;
+		var yRandom = i * 5;
 		drawDandelion(xRandom, yRandom);
 
 	}
@@ -27,15 +26,15 @@ function draw() {
 	function drawDandelion(x, y) {
 		// draw stems
 		fill(0, 120, 10);
-		rect(x * 60 - 1, y * 20 + 100, 4, 100, 20);
+		rect(x * 60 - 1, y + 100, 4, 100, 20);
 		fill(169, 225, 173);
-		ellipse(x * 60, y * 20 + 100, 10, 10);
+		ellipse(x * 60, y + 100, 10, 10);
 
 		// draw puffy white balls
 		for (var i = 1; i < 8; i++) {
 			noStroke();
 			fill(255, 255, 255, 80);
-			ellipse(x * 60, y * 20 + 100, i * -10 + 50, i * -10 + 50);
+			ellipse(x * 60, y + 100, i * -10 + 50, i * -10 + 50);
 
 		}
 	}
